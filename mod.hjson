@@ -1,0 +1,9 @@
+displayName: "Blacklist Mod"
+name: "blacklist-mod"
+author: "Blaizi"
+main: "blacklistmod.BlacklistMod"
+description: ""
+version: 1.0
+minGameVersion: 145
+java: true
+hidden: true

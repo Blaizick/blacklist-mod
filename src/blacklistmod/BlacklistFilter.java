@@ -27,6 +27,11 @@ public class BlacklistFilter implements ChatFilter
 
         for (String name : SerializationUtils.instance.blacklist) 
         {
+            if (SerializationUtils.instance.settings.lowercaseNicks)
+            {
+                name = GetNameLowercase(name);
+            }
+
             if (editedPlayer.contains(name)) 
             {
                 if (SerializationUtils.instance.settings.displayBlacklistedMessages)

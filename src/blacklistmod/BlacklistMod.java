@@ -73,17 +73,19 @@ public class BlacklistMod extends Mod
                     Seq<String> messages = Reflect.get(Vars.ui.chatfrag, "messages");
 
                     boolean isFiltered = false;
-                    for (String message : messages)
+                    for  (int i = 0; i < messages.size; i++)
                     {
+                        String message = messages.get(i);
+
                         if (message.contains(e.message))
                         {
                             if (filteredMessage == null)
                             {
-                                messages.remove(message);
+                                messages.remove(i);
                             }
                             else
                             {
-                                messages.insert(messages.indexOf(message), message);
+                                messages.set(i, filteredMessage);
                             }
 
                             Reflect.set(Vars.ui.chatfrag, "messages", messages);
